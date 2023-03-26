@@ -47,9 +47,9 @@ public class MovieService {
         return list;
     }
 
-    public List<String> findAllMovies(){
+    public List<String> getAllMovies(){
 
-        List<String> list = movieRepository.findAllMovies();
+        List<String> list = movieRepository.getAllMovies();
         return list;
     }
 
