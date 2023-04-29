@@ -1,5 +1,6 @@
 package com.driver;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -20,6 +21,33 @@ public class MovieRepository {
         movieDb.put(key,movie);
         return "Movie added Successfully";
     }
+
+//    public List<String> getDirectorWithMoviesGreaterThan8()
+//    {
+//        List<String> ans = new ArrayList<>();
+//
+//        for(String st : directorDb.keySet())
+//        {
+//            List<String> list = movieDirectorPair.get(st);        //  A->a1,a2,a3  (10,10,10)
+//                                                                  //  B->b1,----b10 (1,10,10,----10)
+//            int count = list.size();
+//            int temp = 0;
+//
+//            for(String b : list)
+//            {
+//                Movie m = movieDb.get(b);
+//
+//                if(m.getImdbRating() > 8) {
+//                    temp++;
+//                }
+//                else
+//                    break;
+//            }
+//            if(temp == count)
+//                ans.add(st);
+//        }
+//        return ans;
+//    }
 
     public String addDirector(Director director){
 
@@ -82,6 +110,7 @@ public class MovieRepository {
         return "Director removed Successfully";
     }
 
+    // change
     public String removeAllDirector(){
 
         for(String director : directorDb.keySet())
@@ -96,4 +125,22 @@ public class MovieRepository {
 
         return "All Director removed Successfully";
     }
+
+//    HashMap<String,List<Movie>> list = new HashMap<>();                     // key : genre , value: list of movies
+//
+//    public String deleteAllDirector(String genreName,String movieName) {
+//
+//        if(list.containsKey(genreName))
+//        {
+//            List<Movie> ans = list.get(genreName);
+//
+//            for(Movie movie : ans)
+//            {
+//                if(movie.equals(movieName))
+//                    return movie;
+//            }
+//        }
+//        return "Not found";
+//    }
+
 }
